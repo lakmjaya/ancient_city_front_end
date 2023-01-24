@@ -23,7 +23,7 @@ export default function Todos() {
                     <div>
                         
                        <li>
-                       <Link to={`/view-message/${todo._id}`}>
+                       <Link to={`/${todo._id}`}>{todo.description}
                         
                         </Link>
                         {/* <a href={`/${todo._id}`}>{todo.description}</a> */}

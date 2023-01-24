@@ -4,6 +4,7 @@ import {createTodo} from "../services/todos-api"
 function Create() {
     const nav = useNavigate()
     const createTheTodo = (e) => {
+        e.preventDefault();
         const todo = { description: e.target.description.value, complete: false}
         createTodo(todo)
         nav('/')

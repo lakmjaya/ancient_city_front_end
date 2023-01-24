@@ -1,6 +1,7 @@
 import { getTodos } from "../services/todos-api"
 import { useState, useEffect } from "react"
 import Create from "./CreateTodo"
+import { Link } from "react-router-dom";
 
 
 export default function Todos() {
@@ -20,11 +21,16 @@ export default function Todos() {
             {todos.map((todo) =>{
                 return (
                     <div>
-                       
-                       <li><a href={`/${todo._id}`}>{todo.description}</a></li>
-                        <div>
+                        
+                       <li>
+                       <Link to={`/view-message/${todo._id}`}>
+                        
+                        </Link>
+                        {/* <a href={`/${todo._id}`}>{todo.description}</a> */}
+                        </li>
+                        {/* <div>
                         <li><a href={`/${todo._id}`}>{todo.complete}</a></li>           
-                        </div> 
+                        </div>  */}
                     </div>
                     
                 )

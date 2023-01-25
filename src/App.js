@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import './App.css'
-import {EditTodo} from './components/EditTodo';
-import Todo from './components/Todo'
-import Todos from './components/Todos'
+import {EditCity} from './components/EditCity';
+import City from './components/City'
+import Cities from './components/Cities'
+import Login from './components/Login'
 
 function App() {
   return (
@@ -10,9 +11,10 @@ function App() {
       
       <Router>
         <Routes>
-        <Route path='/' element={<Todos />}/>
-        <Route path='/:id' element={<Todo />}/>
-        <Route path='/:id/edit' element={<EditTodo />}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/' element={<Cities />}/>
+        <Route path='/:id' element={<City />}/>
+        <Route path='/:id/edit' element={<EditCity />}/>
         </Routes>
       </Router>
       

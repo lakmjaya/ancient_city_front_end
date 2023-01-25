@@ -16,7 +16,7 @@ body{
   font-family: 'Daniel', sans-serif;
 }
 
-.todo{
+.city{
   display: inline-flex;
   flex-direction: column;
 }

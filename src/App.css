@@ -9,6 +9,10 @@
   background-color: antiquewhite;
   list-style: none;
   font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 body{
@@ -20,8 +24,13 @@ body{
   display: inline-flex;
   flex-direction: column;
 }
+.bulma-control-mixin {
+  @include control;
+  background: deeppink;
+  color: white;
+}
 .create-form{
-  height: 100px;
+  height: 300px;
   width: 400px;
   border-style: ridge;
   border-color: black;

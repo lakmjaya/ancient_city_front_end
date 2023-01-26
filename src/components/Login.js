@@ -1,6 +1,7 @@
 import { getCities } from "../services/cities-api"
 import { useState, useEffect } from "react"
 import Create from "./CreateCity"
+import 'bulma/css/bulma.min.css';
 // import { Link } from "react-router-dom";
 
 
@@ -13,7 +14,7 @@ export default function Cities() {
     console.log(Cities)
     return(
         <div>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"></link>
+            {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"></link> */}
             <h1> Writer's Page of Ancient Cities</h1>
             <div>
             <div class="hero is-fullheight"> 

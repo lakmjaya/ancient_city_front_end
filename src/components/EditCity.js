@@ -1,6 +1,8 @@
 import {getCity, editCity} from "../services/cities-api"
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import 'bulma/css/bulma.min.css';
+import '../css/city.css'
 
 export const EditCity = () =>{
     const {id} = useParams()
@@ -14,8 +16,8 @@ export const EditCity = () =>{
 
 
 const editTheCity = e => {
-    e.preventDefault()
-    const updatedCity = {description: e.target.description.value, complete: e.target.complete.checked}
+     e.preventDefault()
+    const updatedCity = {name: e.target.name.value, url : e.target.url.value, description: e.target.description.value, complete: e.target.complete.checked}
     editCity(id, updatedCity)
      .then(response =>{
         console.log(response);
@@ -26,16 +28,22 @@ const editTheCity = e => {
  
    
     return (
-        <div>
-            <form onSubmit={editTheCity}>
-            <h2>Edit the details of Ancient Cities</h2>
-                <br/>
-                Name : <input type='text' name='name' defaultChecked={data.name} /><br/>
-                Image URL : <input type='text' name='image' defaultChecked={data.url} /><br/>
-                Description:<textarea type='text' name='description' defaultValue={data.description}/><br/>
-                Completed:<input type='checkbox' name='complete' defaultChecked={data.complete} />
-                <input type='submit' />
-            </form>
+        <div className='container is-fluid'>
+        
+        <div className='card'>
+        <div className='card-content'>
+        <h4><u>Eidt the selected Ancient City Details</u></h4>
+        <form onSubmit={editTheCity}>
+        <label class="label">Name of the City :</label><input class="input" type='text' name='name' defaultValue={data.name} />
+            <label class="label">Image URL :</label><input class="input" type='text' name='url' defaultValue={data.url} />
+            <label class="label">Description of the City :</label><textarea class="textarea is-info" type='text' name='description' defaultValue={data.description}/>
+            <label class="label">The City Details Eidited:<label class="checkbox"><input type='checkbox' name='complete' defaultChecked={data.complete} /></label></label>
+            <input className='button is-primary' type='submit' />
+            <div class="column"><button class="button is-success" onClick={()=>{nav('/cities')}}>return to main page</button> </div>
+        </form>
+        </div>
+        </div>
+        
         </div>
       )
 }

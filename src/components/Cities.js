@@ -2,6 +2,8 @@ import { getCities } from "../services/cities-api"
 import { useState, useEffect } from "react"
 import Create from "./CreateCity"
 import { Link } from "react-router-dom";
+import 'bulma/css/bulma.min.css';
+import '../css/title.css'
 
 
 export default function Cities() {
@@ -12,17 +14,32 @@ export default function Cities() {
     }, [])
     console.log(Cities)
     return(
-        <div className='city'>
-            <h1>Ancient City List</h1>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"></link>
-            <div className='create-form'>
+        // <div className='city'>
+        <div class="columns">
+            
+            
+            {/* <div className='create-form'> */}
+            <div class="column">
+            
                 <Create />
             </div>
-            <ul className='list'>
+            
+            <div class="column">
+                <br/>
+            <div class="columns">
+            <p class="title"><u>The List of the Ancient Cities</u></p>
+            </div>
+            <br/>
+            <ul>
             {Cities.map((city) =>{
                 return (
-                    <div>
-                        
+                    <div class="columns">
+                       <div>
+                       <figure class="image is-128x128">
+                       <img class="is-rounded" src={city.url}/>
+                       </figure>
+                       </div> 
+                       <div>
                        <li>
                        <Link to={`/${city._id}`}>{city.name}
                         
@@ -32,11 +49,14 @@ export default function Cities() {
                         {/* <div>
                         <li><a href={`/${city._id}`}>{city.complete}</a></li>           
                         </div>  */}
+                      </div> 
+                       
                     </div>
                     
                 )
             })}
           </ul>
+          </div>
         </div>
     )
 }

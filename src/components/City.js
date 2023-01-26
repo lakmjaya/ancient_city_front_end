@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getCity, deleteCity } from "../services/cities-api";
+import 'bulma/css/bulma.min.css';
+import '../css/city.css'
 
 export default function City(){
     const nav = useNavigate()
@@ -19,16 +21,30 @@ export default function City(){
 
     return(
         <div>
-      <h2>
-        Ancient - Cities:
-      </h2>
-        <h3>{city.name}</h3>
-        <img src={city.url}/>
-        <h4>{city.description}</h4>
-       {/* Completed:<input type='checkbox' defaultChecked={city.complete}></input> */}
-      <button onClick={()=>{nav(`/${id}/edit`)}}>edit</button>
-      <button onClick={deleteTheCity}>delete</button>
-      <button onClick={()=>{nav('/')}}>return to main</button>
+          <div className='container is-fluid'>
+      <div className='card'>
+      
+        <div className='card-content'>
+            <h1 >Ancient City Name: {city.name}</h1>
+            <article class="tile is-child box">
+            <figure class="image is-16by9">
+            <img src={city.url}/>
+          </figure>
+          </article>
+            <h2 ><u>Description</u> </h2><h4>{city.description}</h4>
+            
+        </div>
+        
+        <div class='card-footer'>
+        <div class="column"><button class="button is-warning" onClick={()=>{nav(`/${id}/edit`)}}>edit</button></div>
+        <div class="column"><button class="button is-danger" onClick={deleteTheCity}>delete</button></div>
+        <div class="column"><button class="button is-success" onClick={()=>{nav('/cities')}}>return to main page</button> </div>
+      </div>
+      </div>
+        
+
+    </div>
+      
     </div>
     )
 }

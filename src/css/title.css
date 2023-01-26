@@ -1,0 +1,12 @@
+.card-content{
+    font-size: 2em;
+    color: rgb(141, 168, 196);
+}
+.contact-container{
+    padding: 1em;
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

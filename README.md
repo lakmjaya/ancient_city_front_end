@@ -45,5 +45,7 @@ You may also see any lint errors in the console.
 ## Acknowledgements and Resources
 My instructors Tishana Trainor and Kasper Kain
 My cohortmates John and Gary Newton
-Youtube
+Youtube videos
 https://www.w3schools.com
+https://bulma.io/
+https://dashboard.render.com/

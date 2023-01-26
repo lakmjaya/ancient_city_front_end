@@ -1,6 +1,6 @@
 import axios from 'axios'
-//const baseURL = 'https://city-api-back-end.onrender.com/todo'
-const baseURL = 'http://localhost:3001/cities'
+const baseURL = 'https://city-api-back-end.onrender.com/todo'
+//const baseURL = 'http://localhost:3001/cities'
 
 export const getCities = ()=> {
     const URL = baseURL
